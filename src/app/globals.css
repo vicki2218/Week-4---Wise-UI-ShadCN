@@ -47,85 +47,114 @@
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
-/* ==========================================================================
-   DESIGNER NOTE: Theme variables (light mode)
-   All colours use HEX so you can copy values from Figma and paste here.
-   Key variables:
-   — --background / --foreground: page background and text
-   — --primary / --primary-foreground: primary buttons, links, badges (e.g. Wise green)
-   — --secondary, --muted, --accent: secondary UI surfaces
-   — --border, --input, --ring: borders and focus rings
-   — --radius: default border radius (buttons, cards, inputs)
-   — --sidebar-*: sidebar-specific colours
-   ========================================================================== */
 :root {
+  /* Wise UI primitives */
+  --wise-gray-50: #ffffff;
+  --wise-gray-100: #f6f7f4;
+  --wise-gray-200: #ecede8;
+  --wise-gray-300: #d7d8d2;
+  --wise-gray-400: #b7b9b4;
+  --wise-gray-500: #8a8d88;
+  --wise-gray-600: #5a5e58;
+  --wise-gray-700: #2f322d;
+  --wise-gray-800: #161815;
+  --wise-gray-900: #0b0c0a;
+
+  --wise-bright-green-100: #d6f9ce;
+  --wise-bright-green-200: #c0f4b6;
+  --wise-bright-green-300: #adef9d;
+  --wise-bright-green-450: #b3ec8f;
+  --wise-bright-green-500: #9ee770;
+  --wise-bright-green-600: #81e143;
+  --wise-bright-green-700: #66cf21;
+
+  --wise-forest-green-100: #e7fbdb;
+  --wise-forest-green-500: #224d00;
+  --wise-forest-green-600: #163300;
+  --wise-forest-green-700: #002a00;
+  --wise-forest-green-800: #083400;
+  --wise-forest-green-900: #0f2400;
+
+  --wise-red-100: #fae9ea;
+  --wise-red-300: #ffbdbf;
+  --wise-red-400: #ffa8ae;
+  --wise-red-500: #cb2730;
+  --wise-red-700: #a82127;
+
+  --wise-yellow-100: #fff7cc;
+  --wise-yellow-500: #ffd400;
+  --wise-yellow-700: #b39200;
+
+  --wise-overlay-300: rgba(0, 0, 0, 0.15);
+  --wise-overlay-700: rgba(0, 0, 0, 0.45);
+  --wise-overlay-900: rgba(0, 0, 0, 0.6);
+
   --radius: 0.625rem;
-  --background: #ffffff;
-  --foreground: #252525;
-  --card: #ffffff;
-  --card-foreground: #252525;
-  --popover: #ffffff;
-  --popover-foreground: #252525;
-  --primary: #343434;
-  --primary-foreground: #fafafa;
-  --secondary: #f5f5f5;
-  --secondary-foreground: #343434;
-  --muted: #f5f5f5;
-  --muted-foreground: #737373;
-  --accent: #f5f5f5;
-  --accent-foreground: #343434;
-  --destructive: #dc2626;
-  --border: #e5e5e5;
-  --input: #e5e5e5;
-  --ring: #a3a3a3;
-  --chart-1: #e07c2e;
-  --chart-2: #2a9d8f;
-  --chart-3: #3d5a80;
-  --chart-4: #e9c46a;
-  --chart-5: #e76f51;
-  --sidebar: #fafafa;
-  --sidebar-foreground: #252525;
-  --sidebar-primary: #343434;
-  --sidebar-primary-foreground: #fafafa;
-  --sidebar-accent: #f5f5f5;
-  --sidebar-accent-foreground: #343434;
-  --sidebar-border: #e5e5e5;
-  --sidebar-ring: #a3a3a3;
+  --background: var(--wise-gray-50);
+  --foreground: var(--wise-gray-900);
+  --card: var(--wise-gray-50);
+  --card-foreground: var(--wise-gray-900);
+  --popover: var(--wise-gray-50);
+  --popover-foreground: var(--wise-gray-900);
+  --primary: var(--wise-bright-green-500);
+  --primary-foreground: var(--wise-forest-green-600);
+  --secondary: var(--wise-bright-green-100);
+  --secondary-foreground: var(--wise-forest-green-600);
+  --muted: var(--wise-gray-100);
+  --muted-foreground: var(--wise-gray-600);
+  --accent: var(--wise-bright-green-100);
+  --accent-foreground: var(--wise-forest-green-600);
+  --destructive: var(--wise-red-500);
+  --border: var(--wise-gray-300);
+  --input: var(--wise-gray-300);
+  --ring: var(--wise-forest-green-600);
+  --chart-1: var(--wise-bright-green-500);
+  --chart-2: var(--wise-forest-green-500);
+  --chart-3: var(--wise-yellow-500);
+  --chart-4: var(--wise-red-500);
+  --chart-5: var(--wise-gray-500);
+  --sidebar: var(--wise-gray-50);
+  --sidebar-foreground: var(--wise-gray-900);
+  --sidebar-primary: var(--wise-bright-green-500);
+  --sidebar-primary-foreground: var(--wise-forest-green-600);
+  --sidebar-accent: var(--wise-gray-100);
+  --sidebar-accent-foreground: var(--wise-gray-900);
+  --sidebar-border: var(--wise-gray-300);
+  --sidebar-ring: var(--wise-forest-green-600);
 }
 
-/* DESIGNER: Dark mode — add class "dark" to <html> to enable; these vars override :root in dark mode */
 .dark {
-  --background: #252525;
-  --foreground: #fafafa;
-  --card: #343434;
-  --card-foreground: #fafafa;
-  --popover: #343434;
-  --popover-foreground: #fafafa;
-  --primary: #ebebeb;
-  --primary-foreground: #252525;
-  --secondary: #454545;
-  --secondary-foreground: #fafafa;
-  --muted: #454545;
-  --muted-foreground: #a3a3a3;
-  --accent: #454545;
-  --accent-foreground: #fafafa;
-  --destructive: #ef4444;
-  --border: rgba(255, 255, 255, 0.1);
-  --input: rgba(255, 255, 255, 0.15);
-  --ring: #737373;
-  --chart-1: #6366f1;
-  --chart-2: #2dd4bf;
-  --chart-3: #e9c46a;
-  --chart-4: #a78bfa;
-  --chart-5: #f87171;
-  --sidebar: #252525;
-  --sidebar-foreground: #fafafa;
-  --sidebar-primary: #6366f1;
-  --sidebar-primary-foreground: #fafafa;
-  --sidebar-accent: #454545;
-  --sidebar-accent-foreground: #fafafa;
-  --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #737373;
+  --background: var(--wise-gray-900);
+  --foreground: var(--wise-gray-50);
+  --card: var(--wise-gray-800);
+  --card-foreground: var(--wise-gray-50);
+  --popover: var(--wise-gray-700);
+  --popover-foreground: var(--wise-gray-50);
+  --primary: var(--wise-bright-green-500);
+  --primary-foreground: var(--wise-gray-900);
+  --secondary: var(--wise-bright-green-700);
+  --secondary-foreground: var(--wise-bright-green-500);
+  --muted: var(--wise-gray-800);
+  --muted-foreground: var(--wise-gray-300);
+  --accent: var(--wise-forest-green-600);
+  --accent-foreground: var(--wise-bright-green-500);
+  --destructive: var(--wise-red-400);
+  --border: var(--wise-gray-600);
+  --input: var(--wise-gray-600);
+  --ring: var(--wise-bright-green-500);
+  --chart-1: var(--wise-bright-green-500);
+  --chart-2: var(--wise-bright-green-600);
+  --chart-3: var(--wise-yellow-500);
+  --chart-4: var(--wise-red-400);
+  --chart-5: var(--wise-gray-400);
+  --sidebar: var(--wise-gray-900);
+  --sidebar-foreground: var(--wise-gray-50);
+  --sidebar-primary: var(--wise-bright-green-500);
+  --sidebar-primary-foreground: var(--wise-gray-900);
+  --sidebar-accent: var(--wise-gray-800);
+  --sidebar-accent-foreground: var(--wise-gray-50);
+  --sidebar-border: var(--wise-gray-600);
+  --sidebar-ring: var(--wise-bright-green-500);
 }
 
 @layer base {
